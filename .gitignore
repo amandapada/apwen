@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Django specific
+db.sqlite3
+*.sqlite3
+media/
+staticfiles/
+static/
+local_settings.py
+.env
+*.pot
+*.pyc
+*.mo
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Coverage reports
+htmlcov/
+coverage.xml
+*.cover
+.cache
+
+# Migrations (optional, keep if generated manually)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# mypy
+.mypy_cache/
+
+# pytest
+.pytest_cache/
+
+# build artifacts
+build/
+dist/
+
+# node (if using npm or frontend tooling)
+node_modules/
+package-lock.json
