@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign_up Page</title>
-    <link rel="stylesheet" href="sign_up.css">
+    <link rel="stylesheet" href="{% static 'images/sign_up.css' %}">
 </head>
 <body>
     <div class ="signup-container">
@@ -22,7 +24,7 @@
         <label> Password:</label>
         <input type ="text" id="phone_number" name = 'phone_number'>
         <button type ="submit" class ='signup-btn'><a href="index.html" id="signU">Sign Up</a></button>
-        <p> Already have an account?  <a href='sign_in.html'> Sign_in</a></p>
+        <p> Already have an account?  <a href='/sign-in'>Sign In</a></p>
 
         </form>
     </div>
