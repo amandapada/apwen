@@ -1,0 +1,26 @@
+
+
+{% load static %}
+
+<div id="mobile-nav" class="mobile-nav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">
+        <img src="{% static 'images/ABU_LOGO.jpg' %}" alt="ABU Logo" class="logo-img">
+        <div class="logo-text">
+          <img src ="{% static 'images/APWEN.png' %}" alt="APWEN logo">
+           
+        </div>
+      </div>
+      <button id="close-mobile-nav" class="close-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about-us" class="nav-link">About Us</a>
+      <a href="/events" class="nav-link">Events</a>
+      <a href="/resources" class="nav-link">Resource Hub</a>
+      <a href="/sign-in" class="nav-link">Log out</a>
+      <a href="/mentorship"><button class="primary-button">Match with a Mentor</button></a>
+    </nav>
+  </div>

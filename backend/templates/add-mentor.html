@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home | APWEN{% endblock %}
+
+{% block content %}
+     <!-- List Mentors -->
+<form class="add-mentor-form">
+   <h1 class="form-header">Add Mentor</h1>
+    <div class="form-group">
+        <label>First name:</label>
+        <input type="text" id="first-name" name="first-name" placeholder="Enter First Name">
+    </div>
+    <div class="form-group">
+        <label>Last name:</label>
+        <input type="text" id="last-name" name="last-name" placeholder="Enter Last Name">
+    </div>
+    <div class="form-group">
+        <label>Other name (Optional):</label>
+        <input type="text" id="other-name" name="other-name" placeholder="Enter Other Name">
+    </div>
+    <div class="form-group">
+        <label>Departments:</label>
+       <select name="departments" id="departments">
+
+        <option value="" selected disabled>Select Department</option>
+        <option value="computer engineering">Computer Engineering</option>
+        <option value="electrical engineering">Electrical Engineering</option>
+        <option value="telecommunication engineering">Telecommunication Engineering</option>
+       </select>
+    </div>
+
+    <div class="form-group">
+       <label>Select Mentor's Level:</label>
+       <select name="mentor-level" id="mentor-level">
+        <option value="" selected disabled>Select Level</option>
+        <option value="500">500</option>
+        <option value="400">400</option>
+        <option value="300">300</option>
+        <option value="200">200</option>
+        <option value="100">100</option>
+       </select>
+    </div>
+
+    <div class="form-group">
+        <label>Phone Number:</label>
+        <input type="text" id="phone-number" name="phone-number" placeholder="Enter Phone Number">
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter Email Address">
+    </div>
+    <div class="form-group">
+        <label>How many number of mentees can you handle?:</label>
+        <input type="number" id="number-of-mentees" name="number-of-mentees" placeholder="Enter number of Mentees">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="primary-button">Submit</button>
+    </div>
+
+
+    
+</form>
+{% endblock %}

@@ -20,6 +20,11 @@ urlpatterns = [
     path('sign-up', TemplateView.as_view(template_name="sign_up.html"), name="sign_up"),
     path('resources', TemplateView.as_view(template_name="resource.html"), name="sign_up"),
     path('mentorship', TemplateView.as_view(template_name="mentorship.html"), name="sign_up"),
+    path('mentors', TemplateView.as_view(template_name='mentors.html'), name='mentors'),
+    path('add-mentor', TemplateView.as_view(template_name='add-mentor.html'), name='add-mentor'),
+    path('mentees', TemplateView.as_view(template_name='mentees.html'), name='mentees'),
+    path('add-mentee', TemplateView.as_view(template_name='add-mentee.html'), name='add-mentee'),
+    
 
 
     

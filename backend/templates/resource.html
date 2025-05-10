@@ -1,191 +1,90 @@
+
+
+        {% extends "base.html" %}
 {% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APWEN - Association of Professional Women Engineers of Nigeria</title>
-    <meta name="description" content="APWEN - Join a community of women empowering each other to grow in the engineering field">
-    <meta name="author" content="APWEN">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/resource.css' %}">
-  </head>
-  <body>
-    <div id="root">
-      <!-- Mobile Navigation Menu -->
-      <div id="mobile-nav" class="mobile-nav">
-        <div class="mobile-nav-header">
-          <div class="mobile-nav-logo">
-            <img src="{% static 'images/ABU_LOGO.jpg' %}" alt="ABU Logo" class="logo-img">
-            <div class="logo-text">
-              <img src ="{% static 'images/APWEN.png' %}" alt="APWEN logo">
-            </div>
-          </div>
-          <button id="close-mobile-nav" class="close-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
-          </button>
-        </div>
-        <nav class="mobile-nav-links">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about-us" class="nav-link">About Us</a>
-          <a href="/events" class="nav-link">Events</a>
-          <a href="/resources" class="nav-link">Resource Hub</a>
-          <a href="/sign-in" class="nav-link">Log out</a>
-          <a href="/mentorship"><button class="primary-button">Match with a Mentor</button></a>
-        </nav>
-      </div>
-  
-      <!-- Main Content -->
-      <div class="container">
-        <!-- Header -->
-        <header class="header">
-          <div class="logo">
-            <img src="{% static 'images/ABU_LOGO.jpg' %}" alt="ABU Logo" class="logo-img">
-            <div class="logo-text">
-             <img src ="{% static 'images/APWEN.png' %}" alt="APWEN logo">
-            </div>
-          </div>
-          <nav class="desktop-nav">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/about-us" class="nav-link">About Us</a>
-            <a href="/events" class="nav-link">Events</a>
-            <a href="/resources" class="nav-link">Resource Hub</a>
-            <a href="/sign-in" class="nav-link">Log out</a>
-            <a href="/mentorship"><button class="primary-button">Match with a Mentor</button></a>
-          </nav>
-          <button id="open-mobile-nav" class="menu-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
-          </button>
-        </header>
-        
-       
-        <div class="main">
-            <!-- Events Section -->
-            <section class="events-section">
-              <h2>Resources</h2>
-              <div class="events-grid">
-                <div class="event-card">
-                  <div class="event-date">
-                   <img src="{% static 'images/screwdriver.png' %}" alt="logo">
-                  </div>
-                  <div class="event-details">
-                    <h3>Explore DIY projects</h3>
-                    
-                   <a href="https://www.youtube.com/watch?v=voT-xADi-RE&list=PLaA36I4Y6aQWy0GD2-gK-KQujCHyGqBUK" target="_blank" ><button class="primary-button">Watch</button> </a>
-                  </div>
-                </div>
-                <div class="event-card">
-                  <div class="event-date">
-                    <img src="{% static 'images/calender.png' %}" alt="logo">
-                  </div>
-                  <div class="event-details">
-                    <h3>APWEN News</h3>
-                    <a href="https://punchng.com/apwen-canvasses-female-engineers-empowerment/#google_vignette" target="_blank" ><button class="primary-button">Read</button> </a>
-                   
-                  
-                </div>
-              </div>
-            </section>
-            <section class="events-section">
-            
-                <div class="events-grid">
-                  <div class="event-card">
-                    <div class="event-date">
-                      <img src="{% static 'images/python.png' %}" alt="logo">
-                    </div>
-                    <div class="event-details">
-                      <h3>Learn Python</h3>
-                     <a href="https://youtu.be/_uQrJ0TkZlc" target="_blank" ><button class="primary-button">Watch</button> </a>
-                      </div>
-                                  
-                  </div>
-                  <div class="event-card">
-                    <div class="event-date">
-                      <img src="{% static 'images/kotlin.png' %}" alt="logo">
-                    </div>
-                    <div class="event-details">
-                      <h3>Learn Kotlin</h3>
-                      <a href="https://developer.android.com/courses/android-basics-compose/unit-1" target="_blank" ><button class="primary-button">Learn</button> </a>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section class="events-section">
-            
-                <div class="events-grid">
-                  <div class="event-card">
-                    <div class="event-date">
-                      <img src="{% static 'images/cybersecurity.png' %}" alt="logo">
-                    </div>
-                    <div class="event-details">
-                      <h3>CyberSecurity for Beginners</h3>
-                     <a href="https://youtu.be/lpa8uy4DyMo?list=PL9ooVrP1hQOGPQVeapGsJCktzIO4DtI4_" target="_blank" ><button class="primary-button">Watch</button> </a>
-                      </div>
-                                  
-                  </div>
-                  <div class="event-card">
-                    <div class="event-date">
-                      <img src="{% static 'images/naira.png' %}" alt="logo">
-                    </div>
-                    <div class="event-details">
-                      <h3>Be Your Own Boss</h3>
-                      <a href="https://youtu.be/vA60NrfEHfc" target="_blank" ><button class="primary-button">Get Ideas</button> </a>
-                    </div>
-                  </div>
-                
-                </div>
-              </section>
-        </div>
-            
-       <!-- Footer -->
-      <footer class="footer">
-        <div class="footer-grid">
-          <div class="footer-column">
-            <div class="logo-text">
-              <img src ="{% static 'images/APWEN.png' %}" alt="APWEN logo">
-            </div>
-            <p>Empowering women in engineering across Nigeria since 1982.</p>
-          </div>
-          <div class="footer-column">
-            <h4>Quick Links</h4>
-            <a href="/">Home</a>
-            <a href="/about-us">About Us</a>
-            <a href="/events">Events</a>
-            <a href="/resources">Resource Hub</a>
-            
+{% block title %}Home | APWEN{% endblock %}
 
-          </div>
-          <div class="footer-column">
-            <h4>Mission Statement</h4>
-            <p>
-              To continously increase awareness that Engineering is a career for girls also, thereby improving the numerical strength of female Engineers. 
-            </p>
-          </div>
-          <div class="footer-column">
-            <h4>Contact info</h4>
-            <p>Location: Suite 5, Ground gloor NSE NEC building, Lagos-No 1 Engineering close off idowu Taylor Street Victoria Island Lagos, Nigeria.</p>
-            <p>Phone: +234 8033653955</p>
-            <p>Email: info@apwen.org</p>
-            <div class="social-links">
-              
-              <a href="https://www.instagram.com/apwen_abuzaria_collegiate/p/DE85_OfosJj/" class="social-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-              </a>
-             
-              <a href="https://www.linkedin.com/company/apwen-abu-zaria-collegiate" class="social-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </a>
-            </div>
-          </div>
+{% block content %}
+
+       
+<div class="main">
+  <!-- Events Section -->
+  <section class="events-section">
+    <h2>Resources</h2>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-date">
+         <img src="{% static 'images/screwdriver.png' %}" alt="logo">
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 APWEN, ABU Collegiate Chapter. All rights reserved.</p>
+        <div class="event-details">
+          <h3>Explore DIY projects</h3>
+          
+         <a href="https://www.youtube.com/watch?v=voT-xADi-RE&list=PLaA36I4Y6aQWy0GD2-gK-KQujCHyGqBUK" target="_blank" ><button class="primary-button">Watch</button> </a>
         </div>
-      </footer>
+      </div>
+      <div class="event-card">
+        <div class="event-date">
+          <img src="{% static 'images/calender.png' %}" alt="logo">
+        </div>
+        <div class="event-details">
+          <h3>APWEN News</h3>
+          <a href="https://punchng.com/apwen-canvasses-female-engineers-empowerment/#google_vignette" target="_blank" ><button class="primary-button">Read</button> </a>
+         
+        
+      </div>
     </div>
-  </div>
+  </section>
+  <section class="events-section">
   
-  <script src="index.js"></script>
-</body>
-</html>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-date">
+            <img src="{% static 'images/python.png' %}" alt="logo">
+          </div>
+          <div class="event-details">
+            <h3>Learn Python</h3>
+           <a href="https://youtu.be/_uQrJ0TkZlc" target="_blank" ><button class="primary-button">Watch</button> </a>
+            </div>
+                        
+        </div>
+        <div class="event-card">
+          <div class="event-date">
+            <img src="{% static 'images/kotlin.png' %}" alt="logo">
+          </div>
+          <div class="event-details">
+            <h3>Learn Kotlin</h3>
+            <a href="https://developer.android.com/courses/android-basics-compose/unit-1" target="_blank" ><button class="primary-button">Learn</button> </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="events-section">
+  
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-date">
+            <img src="{% static 'images/cybersecurity.png' %}" alt="logo">
+          </div>
+          <div class="event-details">
+            <h3>CyberSecurity for Beginners</h3>
+           <a href="https://youtu.be/lpa8uy4DyMo?list=PL9ooVrP1hQOGPQVeapGsJCktzIO4DtI4_" target="_blank" ><button class="primary-button">Watch</button> </a>
+            </div>
+                        
+        </div>
+        <div class="event-card">
+          <div class="event-date">
+            <img src="{% static 'images/naira.png' %}" alt="logo">
+          </div>
+          <div class="event-details">
+            <h3>Be Your Own Boss</h3>
+            <a href="https://youtu.be/vA60NrfEHfc" target="_blank" ><button class="primary-button">Get Ideas</button> </a>
+          </div>
+        </div>
+      
+      </div>
+    </section>
+</div>
+
+
+{% endblock %}
