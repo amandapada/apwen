@@ -9,21 +9,22 @@
     <link rel="stylesheet" href="{% static 'css/sign_in.css' %}">
 </head>
 <body>
-    <div class ="login-box">
+    <div class="login-box">
         <h1>APWEN</h1><br/>
         <h3>Sign In</h3>
-        <p></p>
-        <p id ='prompt'>Please enter your details below:</p>
-        <form>
-            <label>Email Address:</label>
-            <input type="email" id="email">
-            <label>Password:</label>
-            <input type="password" id="password">
-            <button type ="submit" class ='signup-btn'><a href="/" id="signU">LogIn</a></button>
-            <p> Don't have an account yet?  <a href='/sign-up'> Sign up</a></p>
+        <p id="prompt">Please enter your details below:</p>
 
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <label>Email Address:</label>
+            <input type="email" name="username" required>
+
+            <label>Password:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit" class="signup-btn">Log In</button>
+            <p>Don't have an account yet? <a href="{% url 'signup' %}">Sign up</a></p>
         </form>
     </div>
-    
 </body>
 </html>
