@@ -30,7 +30,7 @@ def add_mentor_view(request):
         messages.success(request, "Mentor added successfully.")
         return redirect('add-mentor')
 
-    return render(request, 'add-mentor.html')
+    return render(request, 'mentors.html')
 
 def add_mentee_view(request):
     if request.method == 'POST':
@@ -64,4 +64,4 @@ def add_mentee_view(request):
         messages.success(request, 'Mentee registered successfully.')
         return redirect('add-mentee-view')
 
-    return render(request, 'add-mentee.html')
+    return render(request, 'mentees.html')
