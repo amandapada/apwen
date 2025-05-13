@@ -9,9 +9,39 @@
         <a href="/add-mentor"><button class="primary-button">Add mentors</button></a>
     </div>
 
-    <!-- List Mentors -->
-     <div class="mentors-list">
+     <!-- List Mentors -->
+    <div class="mentors-list">
         <h1>List of Mentors</h1>
-     </div>
+
+        <!-- Mentor Table -->
+        <table class="mentor-table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Department</th>
+                    <th>Level</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mentor in mentors %}
+                    <tr>
+                        <td>{{ mentor.first_name }}</td>
+                        <td>{{ mentor.last_name }}</td>
+                        <td>{{ mentor.department }}</td>
+                        <td>{{ mentor.level }}</td>
+                        <td>{{ mentor.email }}</td>
+                        <td>{{ mentor.phone_number }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="6">No mentors available.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
 
 {% endblock %}

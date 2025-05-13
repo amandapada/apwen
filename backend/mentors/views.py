@@ -65,3 +65,16 @@ def add_mentee_view(request):
         return redirect('add-mentee-view')
 
     return render(request, 'mentees.html')
+
+
+
+def list_mentors_view(request):
+    mentors = Mentor.objects.all()
+
+    return render(request, 'mentors.html', {'mentors': mentors})
+
+def list_mentee_view(request):
+    mentees = Mentee.objects.all()
+
+    print(mentees)
+    return render(request, 'mentees.html', {'mentees': mentees})

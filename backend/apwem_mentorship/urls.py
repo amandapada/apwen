@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
-
+from mentors.views import list_mentee_view, list_mentors_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -16,12 +16,11 @@ urlpatterns = [
     path('sign-up', TemplateView.as_view(template_name="sign_up.html"), name="sign_up"),
     path('resources', TemplateView.as_view(template_name="resource.html"), name="sign_up"),
     path('mentorship', TemplateView.as_view(template_name="mentorship.html"), name="sign_up"),
-    path('mentors', TemplateView.as_view(template_name='mentors.html'), name='mentors'),
+    path('mentors', list_mentors_view, name='mentors'),
     path('add-mentor', TemplateView.as_view(template_name='add-mentor.html'), name='add-mentor'),
-    path('mentees', TemplateView.as_view(template_name='mentees.html'), name='mentees'),
+    path('mentees', list_mentee_view, name='mentees'),
+
     path('add-mentee', TemplateView.as_view(template_name='add-mentee.html'), name='add-mentee'),
-
-
     
 ]
 
