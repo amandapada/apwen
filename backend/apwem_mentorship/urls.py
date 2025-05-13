@@ -8,12 +8,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include('accounts.urls')),
-    path("api/users/", include("users.urls")),  # Include authentication URLs
-    path("api/mentors/", include("mentors.urls")),  # Include mentor-related URLs
-    path("api/resources/", include("resources.urls")),  # Include resource-related URLs
-    path("api/events/", include("events.urls")),  # Include events-related URLs
-    path("api/chat/", include("chat.urls")),  # Include chat-related URLs
-    path("api/forum/", include("forum.urls")),  # Include forum-related URLs
+    path("mentor/", include('mentors.urls')),
     path('', TemplateView.as_view(template_name="index.html"), name="home"),
     path('about-us', TemplateView.as_view(template_name="about.html"), name="about"),
     path('events', TemplateView.as_view(template_name="events.html"), name="events"),
@@ -25,8 +20,6 @@ urlpatterns = [
     path('add-mentor', TemplateView.as_view(template_name='add-mentor.html'), name='add-mentor'),
     path('mentees', TemplateView.as_view(template_name='mentees.html'), name='mentees'),
     path('add-mentee', TemplateView.as_view(template_name='add-mentee.html'), name='add-mentee'),
-    
-    
 
 
     

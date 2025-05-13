@@ -30,8 +30,7 @@ def add_mentor_view(request):
         messages.success(request, "Mentor added successfully.")
         return redirect('add-mentor')
 
-    return render(request, 'mentor_form.html')
-
+    return render(request, 'add-mentor.html')
 
 def add_mentee_view(request):
     if request.method == 'POST':
@@ -39,14 +38,18 @@ def add_mentee_view(request):
         last_name = request.POST.get('last-name')
         other_name = request.POST.get('other-name')
         department = request.POST.get('departments')
-        mentor_department = request.POST.get('mentor-department') or request.POST.get('departments')  # fallback
+        mentor_department = request.POST.get('mentor-department')  # Updated name
         level = request.POST.get('mentor-level')
         phone_number = request.POST.get('phone-number')
         email = request.POST.get('email')
 
         if Mentee.objects.filter(email=email).exists():
             messages.error(request, 'Mentee with this email already exists.')
-            return redirect('register-mentee')
+            return redirect('add-mentee-view')
+
+        if not all([first_name, last_name, department, mentor_department, level, phone_number, email]):
+            messages.error(request, "Please fill in all required fields.")
+            return redirect('add-mentee-view')
 
         mentee = Mentee.objects.create(
             first_name=first_name,
@@ -59,6 +62,6 @@ def add_mentee_view(request):
             email=email,
         )
         messages.success(request, 'Mentee registered successfully.')
-        return redirect('register-mentee')
+        return redirect('add-mentee-view')
 
-    return render(request, 'register_mentee.html') 
+    return render(request, 'add-mentee.html')
