@@ -7,6 +7,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("accounts/", include('accounts.urls')),
     path("api/users/", include("users.urls")),  # Include authentication URLs
     path("api/mentors/", include("mentors.urls")),  # Include mentor-related URLs
     path("api/resources/", include("resources.urls")),  # Include resource-related URLs
@@ -24,6 +25,7 @@ urlpatterns = [
     path('add-mentor', TemplateView.as_view(template_name='add-mentor.html'), name='add-mentor'),
     path('mentees', TemplateView.as_view(template_name='mentees.html'), name='mentees'),
     path('add-mentee', TemplateView.as_view(template_name='add-mentee.html'), name='add-mentee'),
+    
     
 
 

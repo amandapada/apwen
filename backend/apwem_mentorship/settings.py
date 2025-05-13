@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "events",
     "chat",
     "forum",
+    "accounts"
 ]
 
 # Middleware
@@ -82,7 +83,7 @@ DATABASES = {
 }
 
 # Custom User Model
-AUTH_USER_MODEL = "users.CustomUser"
+# AUTH_USER_MODEL = "users.CustomUser"
 
 # Password validators
 AUTH_PASSWORD_VALIDATORS = [
