@@ -1,46 +1,69 @@
 from django.db import models
-from django.contrib.auth import get_user_model
 
-
-# Create your models here.
-
-User = get_user_model()
-
-class MentorProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="mentor_profile")
-    department = models.CharField(max_length=255)
-    level = models.CharField(max_length=50, blank=True, null=True)  # Graduate or specific level
-    experience = models.TextField(blank=True, null=True)
-    availability = models.BooleanField(default=True)
-
-    def __str__(self):
-        return f"{self.user.username} - {self.department}"
-
-class MenteeProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="mentee_profile")
-    department = models.CharField(max_length=255)
-    level = models.CharField(max_length=50)
-    interests = models.TextField(blank=True, null=True)
-
-    def __str__(self):
-        return f"{self.user.username} - {self.department}"
-
-class MentorshipMatch(models.Model):
-    mentee = models.ForeignKey(MenteeProfile, on_delete=models.CASCADE, related_name="matches")
-    mentor = models.ForeignKey(MentorProfile, on_delete=models.CASCADE, related_name="mentees")
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.mentee.user.username} → {self.mentor.user.username}"
-    
 class Mentor(models.Model):
-    name = models.CharField(max_length=255)
-    institution = models.CharField(max_length=255)
-    field = models.CharField(max_length=255)
-    gender = models.CharField(max_length=10)
-    phone = models.CharField(max_length=15, unique=True)
+    DEPARTMENT_CHOICES = [
+        ('computer engineering', 'Computer Engineering'),
+        ('metallurgical engineering', 'Metallurgical Engineering'),
+        ('electrical engineering', 'Electrical Engineering'),
+        ('telecommunication engineering', 'Telecommunication Engineering'),
+        ('civil engineering', 'Civil Engineering'),
+        ('mechanical engineering', 'Mechanical Engineering'),
+        ('polymer and textile engineering', 'Polymer and Textile Engineering'),
+        ('agricultural engineering', 'Agricultural Engineering'),
+        ('chemical engineering', 'Chemical Engineering'),
+        ('water resources and environmental engineering', 'Water Resources and Environmental Engineering'),
+    ]
+
+    LEVEL_CHOICES = [
+        ('100', '100'),
+        ('200', '200'),
+        ('300', '300'),
+        ('400', '400'),
+        ('500', '500'),
+    ]
+
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    other_name = models.CharField(max_length=100, blank=True, null=True)
+    department = models.CharField(max_length=100, choices=DEPARTMENT_CHOICES)
+    level = models.CharField(max_length=3, choices=LEVEL_CHOICES)
+    phone_number = models.CharField(max_length=15)
+    email = models.EmailField(unique=True)
+    number_of_mentees = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} ({self.department})"
+
+class Mentee(models.Model):
+    LEVEL_CHOICES = [
+        ('100', '100'),
+        ('200', '200'),
+        ('300', '300'),
+        ('400', '400'),
+        ('500', '500'),
+    ]
+
+    DEPARTMENT_CHOICES = [
+        ('computer engineering', 'Computer Engineering'),
+        ('metallurgical engineering', 'Metallurgical Engineering'),
+        ('electrical engineering', 'Electrical Engineering'),
+        ('telecommunication engineering', 'Telecommunication Engineering'),
+        ('civil engineering', 'Civil Engineering'),
+        ('mechanical engineering', 'Mechanical Engineering'),
+        ('polymer and textile engineering', 'Polymer and Textile Engineering'),
+        ('agricultural engineering', 'Agricultural Engineering'),
+        ('chemical engineering', 'Chemical Engineering'),
+        ('water resources and environmental engineering', 'Water Resources and Environmental Engineering'),
+    ]
+
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    other_name = models.CharField(max_length=100, blank=True, null=True)
+    department = models.CharField(max_length=100, choices=DEPARTMENT_CHOICES)
+    mentor_department = models.CharField(max_length=100, choices=DEPARTMENT_CHOICES)
+    level = models.CharField(max_length=3, choices=LEVEL_CHOICES)
+    phone_number = models.CharField(max_length=20)
     email = models.EmailField(unique=True)
 
     def __str__(self):
-        return self.name
-
+        return f'{self.first_name} {self.last_name} ({self.level})'

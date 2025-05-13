@@ -1,10 +1,7 @@
 from django.urls import path
-from .views import MentorListView, MenteeCreateView, MatchMentorView
-# from .views import SomeMentorView
+from .views import add_mentor_view, add_mentee_view
 
 urlpatterns = [
-    path("mentors/", MentorListView.as_view(), name="mentor-list"),
-    path("mentees/register/", MenteeCreateView.as_view(), name="mentee-register"),
-    path("match/", MatchMentorView.as_view(), name="mentor-match"),
-    # path("example/", SomeMentorView.as_view(), name="example-view"),
+    path('mentors/add/', add_mentor_view, name='add-mentor-view'),
+    path('mentee/add/', add_mentee_view, name='add-mentee-view'),
 ]

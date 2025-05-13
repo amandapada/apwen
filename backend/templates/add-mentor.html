@@ -5,7 +5,8 @@
 
 {% block content %}
      <!-- List Mentors -->
-<form class="add-mentor-form">
+<form class="add-mentor-form"  method="POST" action="{% url 'add-mentor-view' %}">
+    {% csrf_token %}
    <h1 class="form-header">Add Mentor</h1>
     <div class="form-group">
         <label>First name:</label>
