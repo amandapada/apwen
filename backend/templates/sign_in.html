@@ -24,6 +24,14 @@
 
             <button type="submit" class="signup-btn">Log In</button>
             <p>Don't have an account yet? <a href="{% url 'signup' %}">Sign up</a></p>
+
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </form>
     </div>
 </body>

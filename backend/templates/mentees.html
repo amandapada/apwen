@@ -14,7 +14,7 @@
         <h1>List of Mentees</h1>
 
         <!-- Mentee Table -->
-        <table class="mentee-table">
+        <table class="mentor-table">
             <thead>
                 <tr>
                     <th>First Name</th>
@@ -24,6 +24,7 @@
                     <th>Email</th>
                     <th>Phone Number</th>
                     <th>Mentor's Department</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,7 @@
                         <td>{{ mentee.email }}</td>
                         <td>{{ mentee.phone_number }}</td>
                         <td>{{ mentee.mentor_department }}</td>
+                        <td><button class="primary-button">Match Mentor</button></td>
                     </tr>
                 {% empty %}
                     <tr>
