@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>splash screen</title>
+    <script>
+        setTimeout(function(){
+            window.location.href="sign_in.html"},2000);
+        </script>
+   
+    <style>
+        .splash{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo{
+            font-size: 3rem;
+            font-weight: bold;
+            color: #800040;
+            text-align: center;
+        }
+
+        .lines{
+            display: flex;
+            justify-content: center;
+        }
+
+        .line{
+            width: 50px;
+            height: 5px;
+            background: #c59999;
+            margin: 10px;
+            animation: animate-lines 1.5s infinite alternate;
+        }
+
+        .line:nth-child(1){
+            animation-delay: 0s;
+        }
+        .line:nth-child(2){
+            animation-delay: 0.3s;
+        }
+        .line:nth-child(3){
+            animation-delay: 0.6s;
+        }
+        @keyframes animate-lines{
+            0%{transform: scaleX(1);}
+            100%{transform: scaleX(1.5);}
+        }
+    </style>
+</head>
+<body>
+    <div class="splash">
+        <div class="splash-content">
+            <h1 class="logo">APWEN</h1>
+            <div class="lines">
+                <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    </div></div>
+</body>
+</html>
